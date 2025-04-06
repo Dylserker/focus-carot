@@ -1,12 +1,23 @@
-import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import React, { useEffect } from 'react';
+import { StyleSheet, Text, View, SafeAreaView, ActivityIndicator } from 'react-native';
+import { useRouter } from 'expo-router';
+import { useAuth } from './context/AuthContext';
 
-export default function Home() {
+export default function Index() {
+    const router = useRouter();
+    const { user, isLoading } = useAuth();
+
+    useEffect(() => {
+        if (!isLoading) {
+            router.replace(user ? '/home' : '/login');
+        }
+    }, [isLoading, user]);
+
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.contentContainer}>
-                <Text style={styles.title}>Hello World!</Text>
-                <Text style={styles.subtitle}>Bienvenue dans mon application React Native</Text>
+                <ActivityIndicator size="large" color="#007BFF" />
+                <Text style={styles.title}>Chargement...</Text>
             </View>
         </SafeAreaView>
     );
@@ -23,12 +34,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     title: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        marginBottom: 16,
-    },
-    subtitle: {
-        fontSize: 16,
+        fontSize: 18,
+        marginTop: 16,
         color: '#666',
     },
 });
