@@ -47,7 +47,6 @@ const CustomizationScreen = () => {
                 )}
             </ScrollView>
 
-            <Footer />
         </View>
     );
 };
