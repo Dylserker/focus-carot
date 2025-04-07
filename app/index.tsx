@@ -9,7 +9,7 @@ export default function Index() {
 
     useEffect(() => {
         if (!isLoading) {
-            router.replace(user ? '/home' : '/screen/login');
+            router.replace(user ? '/screen/home' : '/screen/login');
         }
     }, [isLoading, user]);
 

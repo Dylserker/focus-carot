@@ -14,6 +14,10 @@ const Footer = () => {
         router.push('/screen/tasks');
     };
 
+    const navigateToAchievements = () => {
+        router.push('/screen/achievements');
+    };
+
     return (
         <View style={styles.footer}>
             <View style={styles.buttonContainer}>
@@ -29,6 +33,13 @@ const Footer = () => {
                     onPress={navigateToTasks}
                 >
                     <Text style={styles.buttonText}>Tâches</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    style={styles.achievementsButton}
+                    onPress={navigateToAchievements}
+                >
+                    <Text style={styles.buttonText}>Succès</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
@@ -73,6 +84,11 @@ const styles = StyleSheet.create({
     tasksButton: {
         padding: 10,
         backgroundColor: '#5cb85c',
+        borderRadius: 5,
+    },
+    achievementsButton: {
+        padding: 10,
+        backgroundColor: '#f0ad4e',
         borderRadius: 5,
     },
     logoutText: {

@@ -25,7 +25,7 @@ export default function Register() {
 
         const success = await register(name, email, password);
         if (success) {
-            router.replace('/home');
+            router.replace('/screen/home');
         } else {
             alert('Échec de l\'inscription. Veuillez réessayer.');
         }
