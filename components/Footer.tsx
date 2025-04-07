@@ -10,6 +10,10 @@ const Footer = () => {
         router.push('/profile');
     };
 
+    const navigateToTasks = () => {
+        router.push('/tasks');
+    };
+
     return (
         <View style={styles.footer}>
             <View style={styles.buttonContainer}>
@@ -18,6 +22,13 @@ const Footer = () => {
                     onPress={navigateToProfile}
                 >
                     <Text style={styles.buttonText}>Profil</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    style={styles.tasksButton}
+                    onPress={navigateToTasks}
+                >
+                    <Text style={styles.buttonText}>Tâches</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
@@ -57,6 +68,11 @@ const styles = StyleSheet.create({
     profileButton: {
         padding: 10,
         backgroundColor: '#4682B4',
+        borderRadius: 5,
+    },
+    tasksButton: {
+        padding: 10,
+        backgroundColor: '#5cb85c',
         borderRadius: 5,
     },
     logoutText: {
