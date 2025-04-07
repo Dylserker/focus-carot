@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { useAuth } from './context/AuthContext';
-import Footer from '../components/Footer';
 import { StatusBar } from 'expo-status-bar';
 
 const ProfileScreen = () => {
@@ -31,7 +30,6 @@ const ProfileScreen = () => {
                     )}
                 </View>
             </ScrollView>
-            <Footer />
         </View>
     );
 };
