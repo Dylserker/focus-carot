@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, FlatList, SafeAreaView } from 'react-native';
-import Footer from '../components/Footer';
+import Footer from '../../components/Footer';
 
 interface Task {
     id: string;

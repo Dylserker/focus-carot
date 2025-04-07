@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, SafeAreaView, ActivityIndicator } from 'react-native';
 import { Link, useRouter } from 'expo-router';
-import { useAuth } from './context/AuthContext';
+import { useAuth } from '../context/AuthContext';
 
 export default function Register() {
     const [name, setName] = useState('');
@@ -86,7 +86,7 @@ export default function Register() {
 
                 <View style={styles.linkContainer}>
                     <Text style={styles.linkText}>Déjà un compte ? </Text>
-                    <Link href="/login" style={styles.link}>Se connecter</Link>
+                    <Link href="/screen/login" style={styles.link}>Se connecter</Link>
                 </View>
             </View>
         </SafeAreaView>

@@ -7,11 +7,11 @@ const Footer = () => {
     const { logout } = useAuth();
 
     const navigateToProfile = () => {
-        router.push('/profile');
+        router.push('/screen/profile');
     };
 
     const navigateToTasks = () => {
-        router.push('/tasks');
+        router.push('/screen/tasks');
     };
 
     return (
