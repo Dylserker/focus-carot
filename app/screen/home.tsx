@@ -1,4 +1,3 @@
-// app/home.tsx
 import React, { useEffect } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';

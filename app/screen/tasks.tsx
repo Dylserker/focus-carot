@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, FlatList, SafeAreaView } from 'react-native';
-import Footer from '../../components/Footer';
 
 interface Task {
     id: string;
@@ -76,7 +75,6 @@ export default function TasksScreen() {
                     style={styles.list}
                 />
             </View>
-            <Footer />
         </SafeAreaView>
     );
 }
