@@ -10,13 +10,13 @@ export default function Home() {
 
     useEffect(() => {
         if (!user) {
-            router.replace('/login');
+            router.replace('/screen/login');
         }
     }, [user]);
 
     const handleLogout = async () => {
         await logout();
-        router.replace('/login');
+        router.replace('/screen/login');
     };
 
     if (!user) {

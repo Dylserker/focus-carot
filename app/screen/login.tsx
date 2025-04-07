@@ -61,7 +61,7 @@ export default function Login() {
 
                 <View style={styles.linkContainer}>
                     <Text style={styles.linkText}>Pas encore de compte ? </Text>
-                    <Link href="/register" style={styles.link}>S'inscrire</Link>
+                    <Link href="/screen/register" style={styles.link}>S'inscrire</Link>
                 </View>
             </View>
         </SafeAreaView>
