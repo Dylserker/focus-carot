@@ -18,6 +18,10 @@ const Footer = () => {
         router.push('/screen/achievements');
     };
 
+    const navigateToCustomization = () => {
+        router.push('/screen/customization');
+    };
+
     return (
         <View style={styles.footer}>
             <View style={styles.buttonContainer}>
@@ -26,6 +30,13 @@ const Footer = () => {
                     onPress={navigateToProfile}
                 >
                     <Text style={styles.buttonText}>Profil</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    style={styles.customizationButton}
+                    onPress={navigateToCustomization}
+                >
+                    <Text style={styles.buttonText}>Personnalisation</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
@@ -89,6 +100,11 @@ const styles = StyleSheet.create({
     achievementsButton: {
         padding: 10,
         backgroundColor: '#f0ad4e',
+        borderRadius: 5,
+    },
+    customizationButton: {
+        padding: 10,
+        backgroundColor: '#9370DB',
         borderRadius: 5,
     },
     logoutText: {
