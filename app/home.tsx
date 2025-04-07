@@ -28,10 +28,6 @@ export default function Home() {
             <View style={styles.contentContainer}>
                 <Text style={styles.title}>Bienvenue, {user.name}!</Text>
                 <Text style={styles.subtitle}>Vous êtes maintenant connecté</Text>
-
-                <TouchableOpacity style={styles.button} onPress={handleLogout}>
-                    <Text style={styles.buttonText}>Se déconnecter</Text>
-                </TouchableOpacity>
             </View>
         </SafeAreaView>
     );

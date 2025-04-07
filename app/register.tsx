@@ -25,8 +25,7 @@ export default function Register() {
 
         const success = await register(name, email, password);
         if (success) {
-            // Redirection vers la page principale après inscription réussie
-            router.replace('/home'); // Vous devrez créer cette page
+            router.replace('/home');
         } else {
             alert('Échec de l\'inscription. Veuillez réessayer.');
         }

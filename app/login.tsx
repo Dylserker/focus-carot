@@ -17,8 +17,7 @@ export default function Login() {
 
         const success = await login(email, password);
         if (success) {
-            // Redirection vers la page principale après connexion réussie
-            router.replace('/home'); // Vous devrez créer cette page
+            router.replace('/home');
         } else {
             alert('Échec de la connexion. Veuillez vérifier vos identifiants.');
         }
