@@ -1,18 +1,32 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import { useAuth } from '../app/context/AuthContext';
+import { router } from 'expo-router';
 
 const Footer = () => {
     const { logout } = useAuth();
 
+    const navigateToProfile = () => {
+        router.push('/profile');
+    };
+
     return (
         <View style={styles.footer}>
-            <TouchableOpacity
-                style={styles.logoutButton}
-                onPress={logout}
-            >
-                <Text style={styles.logoutText}>Déconnexion</Text>
-            </TouchableOpacity>
+            <View style={styles.buttonContainer}>
+                <TouchableOpacity
+                    style={styles.profileButton}
+                    onPress={navigateToProfile}
+                >
+                    <Text style={styles.buttonText}>Profil</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    style={styles.logoutButton}
+                    onPress={logout}
+                >
+                    <Text style={styles.logoutText}>Déconnexion</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     );
 };
@@ -29,12 +43,27 @@ const styles = StyleSheet.create({
         borderTopColor: '#e0e0e0',
         alignItems: 'center',
     },
+    buttonContainer: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        width: '100%',
+        gap: 15,
+    },
     logoutButton: {
         padding: 10,
         backgroundColor: '#ff6347',
         borderRadius: 5,
     },
+    profileButton: {
+        padding: 10,
+        backgroundColor: '#4682B4',
+        borderRadius: 5,
+    },
     logoutText: {
+        color: 'white',
+        fontWeight: 'bold',
+    },
+    buttonText: {
         color: 'white',
         fontWeight: 'bold',
     },
