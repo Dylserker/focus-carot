@@ -1,10 +1,14 @@
 import React from 'react';
 import { Stack } from 'expo-router';
-import { AuthProvider } from './context/AuthContext';
+import { View, StyleSheet } from 'react-native';
+import { AuthProvider, useAuth } from './context/AuthContext';
+import Footer from '../components/Footer';
 
-export default function RootLayout() {
+function AppLayoutContent() {
+    const { user } = useAuth();
+
     return (
-        <AuthProvider>
+        <View style={styles.container}>
             <Stack>
                 <Stack.Screen
                     name="index"
@@ -25,6 +29,22 @@ export default function RootLayout() {
                     }}
                 />
             </Stack>
+            {user && <Footer />}
+        </View>
+    );
+}
+
+export default function RootLayout() {
+    return (
+        <AuthProvider>
+            <AppLayoutContent />
         </AuthProvider>
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        paddingBottom: 70,
+    },
+});

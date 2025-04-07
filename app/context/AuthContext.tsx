@@ -10,6 +10,7 @@ type User = {
 type AuthContextType = {
     user: User | null;
     isLoading: boolean;
+    isAuthenticated: boolean;
     login: (email: string, password: string) => Promise<boolean>;
     register: (name: string, email: string, password: string) => Promise<boolean>;
     logout: () => Promise<void>;
@@ -98,7 +99,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     };
 
     return (
-        <AuthContext.Provider value={{ user, isLoading, login, register, logout }}>
+        <AuthContext.Provider value={{
+            user,
+            isLoading,
+            isAuthenticated: !!user,
+            login,
+            register,
+            logout
+        }}>
             {children}
         </AuthContext.Provider>
     );
