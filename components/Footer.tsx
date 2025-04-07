@@ -29,35 +29,35 @@ const Footer = () => {
                     style={styles.profileButton}
                     onPress={navigateToProfile}
                 >
-                    <Text style={styles.buttonText}>Profil</Text>
+                    <Text style={styles.buttonText} numberOfLines={1} ellipsizeMode="tail">Profil</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
                     style={styles.customizationButton}
                     onPress={navigateToCustomization}
                 >
-                    <Text style={styles.buttonText}>Personnalisation</Text>
+                    <Text style={styles.buttonText} numberOfLines={1} ellipsizeMode="tail">Personnalisation</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
                     style={styles.tasksButton}
                     onPress={navigateToTasks}
                 >
-                    <Text style={styles.buttonText}>Tâches</Text>
+                    <Text style={styles.buttonText} numberOfLines={1} ellipsizeMode="tail">Tâches</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
                     style={styles.achievementsButton}
                     onPress={navigateToAchievements}
                 >
-                    <Text style={styles.buttonText}>Succès</Text>
+                    <Text style={styles.buttonText} numberOfLines={1} ellipsizeMode="tail">Succès</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
                     style={styles.logoutButton}
                     onPress={logout}
                 >
-                    <Text style={styles.logoutText}>Déconnexion</Text>
+                    <Text style={styles.logoutText} numberOfLines={1} ellipsizeMode="tail">Déconnexion</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -71,11 +71,11 @@ const styles = StyleSheet.create({
         left: 0,
         right: 0,
         backgroundColor: '#f8f8f8',
-        padding: 10,
+        padding: 8,
         borderTopWidth: 1,
         borderTopColor: '#e0e0e0',
         alignItems: 'center',
-        maxWidth: '95%',
+        maxWidth: '100%',
         marginHorizontal: 'auto',
     },
     buttonContainer: {
@@ -87,51 +87,58 @@ const styles = StyleSheet.create({
         padding: 6,
         backgroundColor: '#ff6347',
         borderRadius: 5,
-        margin: 1,
+        margin: 2,
         flex: 1,
         alignItems: 'center',
+        justifyContent: 'center',
     },
     profileButton: {
         padding: 6,
         backgroundColor: '#4682B4',
         borderRadius: 5,
-        margin: 1,
+        margin: 2,
         flex: 1,
         alignItems: 'center',
+        justifyContent: 'center',
     },
     tasksButton: {
         padding: 6,
         backgroundColor: '#5cb85c',
         borderRadius: 5,
-        margin: 1,
+        margin: 2,
         flex: 1,
         alignItems: 'center',
+        justifyContent: 'center',
     },
     achievementsButton: {
         padding: 6,
         backgroundColor: '#f0ad4e',
         borderRadius: 5,
-        margin: 1,
+        margin: 2,
         flex: 1,
         alignItems: 'center',
+        justifyContent: 'center',
     },
     customizationButton: {
         padding: 6,
         backgroundColor: '#9370DB',
         borderRadius: 5,
-        margin: 1,
-        flex: 1,
+        margin: 2,
+        flex: 1.5,
         alignItems: 'center',
+        justifyContent: 'center',
     },
     logoutText: {
         color: 'white',
         fontWeight: 'bold',
-        fontSize: 11,
+        fontSize: 10,
+        textAlign: 'center',
     },
     buttonText: {
         color: 'white',
         fontWeight: 'bold',
-        fontSize: 11,
+        fontSize: 10,
+        textAlign: 'center',
     },
 });
 
