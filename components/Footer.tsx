@@ -6,6 +6,10 @@ import { router } from 'expo-router';
 const Footer = () => {
     const { logout } = useAuth();
 
+    const navigateToHome = () => {
+        router.push('/');
+    };
+
     const navigateToProfile = () => {
         router.push('/screen/profile');
     };
@@ -33,17 +37,17 @@ const Footer = () => {
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    style={styles.customizationButton}
-                    onPress={navigateToCustomization}
-                >
-                    <Text style={styles.buttonText} numberOfLines={1} ellipsizeMode="tail">Personnalisation</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity
                     style={styles.tasksButton}
                     onPress={navigateToTasks}
                 >
                     <Text style={styles.buttonText} numberOfLines={1} ellipsizeMode="tail">Tâches</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    style={styles.homeButton}
+                    onPress={navigateToHome}
+                >
+                    <Text style={styles.homeText} numberOfLines={1} ellipsizeMode="tail">Accueil</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
@@ -54,11 +58,12 @@ const Footer = () => {
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    style={styles.logoutButton}
-                    onPress={logout}
+                    style={styles.customizationButton}
+                    onPress={navigateToCustomization}
                 >
-                    <Text style={styles.logoutText} numberOfLines={1} ellipsizeMode="tail">Déconnexion</Text>
+                    <Text style={styles.buttonText} numberOfLines={1} ellipsizeMode="tail">Personnalisation</Text>
                 </TouchableOpacity>
+
             </View>
         </View>
     );
@@ -83,9 +88,9 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         width: '100%',
     },
-    logoutButton: {
+    homeButton: {
         padding: 6,
-        backgroundColor: '#ff6347',
+        backgroundColor: '#4169E1',
         borderRadius: 5,
         margin: 2,
         flex: 1,
@@ -128,7 +133,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    logoutText: {
+    homeText: {
         color: 'white',
         fontWeight: 'bold',
         fontSize: 10,
