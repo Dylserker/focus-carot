@@ -12,6 +12,8 @@ function AppLayoutContent() {
         <View style={styles.container}>
             <Stack screenOptions={{
                 headerShown: true,
+                headerTitle: "",
+                headerLeft: () => null,
                 headerRight: () => (
                     <TouchableOpacity style={{ marginRight: 15 }}>
                         <Ionicons name="settings-outline" size={24} color="black" />
