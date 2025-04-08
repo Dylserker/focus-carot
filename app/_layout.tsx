@@ -1,15 +1,23 @@
 import React from 'react';
 import { Stack } from 'expo-router';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Footer from '../components/Footer';
+import { Ionicons } from '@expo/vector-icons';
 
 function AppLayoutContent() {
     const { user } = useAuth();
 
     return (
         <View style={styles.container}>
-            <Stack screenOptions={{ headerShown: false }}>
+            <Stack screenOptions={{
+                headerShown: true,
+                headerRight: () => (
+                    <TouchableOpacity style={{ marginRight: 15 }}>
+                        <Ionicons name="settings-outline" size={24} color="black" />
+                    </TouchableOpacity>
+                )
+            }}>
                 <Stack.Screen name="index" />
                 <Stack.Screen name="login" />
                 <Stack.Screen name="register" />
