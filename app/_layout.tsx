@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stack } from 'expo-router';
+import { Stack, useRouter } from 'expo-router';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Footer from '../components/Footer';
@@ -7,6 +7,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 function AppLayoutContent() {
     const { user } = useAuth();
+    const router = useRouter();
 
     return (
         <View style={styles.container}>
@@ -17,15 +18,19 @@ function AppLayoutContent() {
                 headerLeft: () => null,
                 gestureEnabled: false,
                 headerRight: () => (
-                    <TouchableOpacity style={{ marginRight: 15 }}>
+                    <TouchableOpacity
+                        style={{ marginRight: 15 }}
+                        onPress={() => router.push('/settings')}
+                    >
                         <Ionicons name="settings-outline" size={24} color="black" />
                     </TouchableOpacity>
                 )
             }}>
 
-            <Stack.Screen name="index" />
+                <Stack.Screen name="index" />
                 <Stack.Screen name="login" />
                 <Stack.Screen name="register" />
+                <Stack.Screen name="settings" />
             </Stack>
             {user && <Footer />}
         </View>
