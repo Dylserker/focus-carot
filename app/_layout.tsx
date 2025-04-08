@@ -13,14 +13,17 @@ function AppLayoutContent() {
             <Stack screenOptions={{
                 headerShown: true,
                 headerTitle: "",
+                headerBackVisible: false,
                 headerLeft: () => null,
+                gestureEnabled: false,
                 headerRight: () => (
                     <TouchableOpacity style={{ marginRight: 15 }}>
                         <Ionicons name="settings-outline" size={24} color="black" />
                     </TouchableOpacity>
                 )
             }}>
-                <Stack.Screen name="index" />
+
+            <Stack.Screen name="index" />
                 <Stack.Screen name="login" />
                 <Stack.Screen name="register" />
             </Stack>
