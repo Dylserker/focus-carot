@@ -1,9 +1,31 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Alert } from 'react-native';
 import { useAuth } from './context/AuthContext';
+import { useRouter } from 'expo-router';
 
 export default function SettingsScreen() {
-    const { user } = useAuth();
+    const { user, logout } = useAuth();
+    const router = useRouter();
+
+    const handleLogout = async () => {
+        Alert.alert(
+            "Déconnexion",
+            "Êtes-vous sûr de vouloir vous déconnecter ?",
+            [
+                {
+                    text: "Annuler",
+                    style: "cancel"
+                },
+                {
+                    text: "Déconnecter",
+                    onPress: async () => {
+                        await logout();
+                        router.push('/');
+                    }
+                }
+            ]
+        );
+    };
 
     return (
         <ScrollView style={styles.container}>
@@ -16,7 +38,6 @@ export default function SettingsScreen() {
                             <Text style={styles.settingLabel}>Compte</Text>
                             <Text style={styles.settingValue}>{user.email}</Text>
                         </View>
-                        {/* Ajoutez d'autres options de paramètres ici */}
                         <View style={styles.settingItem}>
                             <Text style={styles.settingLabel}>Notifications</Text>
                         </View>
@@ -26,6 +47,13 @@ export default function SettingsScreen() {
                         <View style={styles.settingItem}>
                             <Text style={styles.settingLabel}>À propos</Text>
                         </View>
+
+                        <TouchableOpacity
+                            style={styles.logoutButton}
+                            onPress={handleLogout}
+                        >
+                            <Text style={styles.logoutButtonText}>Se déconnecter</Text>
+                        </TouchableOpacity>
                     </>
                 ) : (
                     <Text>Veuillez vous connecter pour voir vos paramètres</Text>
@@ -69,5 +97,18 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: '#888',
         marginTop: 4,
+    },
+    logoutButton: {
+        backgroundColor: '#ff3b30',
+        paddingVertical: 12,
+        paddingHorizontal: 16,
+        borderRadius: 8,
+        marginTop: 20,
+        alignItems: 'center',
+    },
+    logoutButtonText: {
+        color: 'white',
+        fontSize: 16,
+        fontWeight: 'bold',
     },
 });
