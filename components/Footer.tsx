@@ -44,13 +44,6 @@ const Footer = () => {
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    style={styles.homeButton}
-                    onPress={navigateToHome}
-                >
-                    <Text style={styles.homeText} numberOfLines={1} ellipsizeMode="tail">Accueil</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity
                     style={styles.achievementsButton}
                     onPress={navigateToAchievements}
                 >
@@ -87,15 +80,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         width: '100%',
-    },
-    homeButton: {
-        padding: 6,
-        backgroundColor: '#4169E1',
-        borderRadius: 5,
-        margin: 2,
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
     },
     profileButton: {
         padding: 6,
