@@ -1,6 +1,6 @@
 import React from 'react';
 import { Stack, useRouter } from 'expo-router';
-import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Footer from '../components/Footer';
 import { Ionicons } from '@expo/vector-icons';
@@ -15,7 +15,19 @@ function AppLayoutContent() {
                 headerShown: true,
                 headerTitle: "",
                 headerBackVisible: false,
-                headerLeft: () => null,
+                headerLeft: () => (
+                    <TouchableOpacity
+                        style={{ marginLeft: 5 }}
+                        onPress={() => router.push('/')}
+                    >
+                        <Image
+                            source={require('../assets/logo/Logo.png')}
+                            style={{ width: 60, height: 60 }}
+                            resizeMode="contain"
+                        />
+                    </TouchableOpacity>
+                ),
+
                 gestureEnabled: false,
                 headerRight: () => (
                     <TouchableOpacity
