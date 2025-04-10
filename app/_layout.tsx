@@ -18,7 +18,7 @@ function AppLayoutContent() {
                 headerLeft: () => (
                     <TouchableOpacity
                         style={{ marginLeft: 5 }}
-                        onPress={() => router.push('/')}
+                        onPress={() => router.push('/screen/home')}
                     >
                         <Image
                             source={require('../assets/logo/Logo.png')}
